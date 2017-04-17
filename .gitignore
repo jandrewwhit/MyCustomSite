@@ -1,0 +1,5 @@
+.DS_Store
+bower_components
+.tmp
+node_modules
+assets/local-config.json

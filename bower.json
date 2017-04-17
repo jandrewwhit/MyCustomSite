@@ -1,0 +1,21 @@
+{
+  "name": "cardinal-media-base",
+  "description": "base wp theme for Cardinal Media",
+  "main": "gulpfile.js",
+  "authors": [
+    "Jordan Cauley <jordan@cauley.co>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "git://github.com/twbs/bootstrap.git#v4.0.0-alpha.4"
+  }
+}
