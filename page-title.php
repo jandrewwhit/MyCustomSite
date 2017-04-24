@@ -87,7 +87,7 @@ function test_input($data) {
 <div class="container">
 	<div class="starter-template" style="border: 1px solid">
 		<h2>The Movie DB Search</h2>	
-		<form method="get" action="search.php">
+		<form method="get" action="../">
 		Search by Title <input type="text" name="s" value="">
 		<span class="error">* <?php echo $searchErr;?></span>
 		<br><br>

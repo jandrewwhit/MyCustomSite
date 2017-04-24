@@ -91,7 +91,7 @@ function test_input($data) {
 <div class="container">
 	<div class="starter-template" style="border: 1px solid">
 		<h2>The Movie DB Search</h2>	
-		<form method="get" action="search.php">
+		<form method="get" action="">
 		Search by Title <input type="text" name="s" value="">
 		<span class="error">* <?php echo $searchErr;?></span>
 		<br><br>
@@ -165,10 +165,10 @@ if (!empty($search)) {
 					echo '</div>';
 					echo '<div class="col-lg-12" style="height: 410px">';// style="border: 1px solid">';
 						if (!empty($poster)) {
-							echo '<a href="title.php?i='.$id.'"><img src="'.$base_url.$poster_size_w342.$poster.'" style="max-height: 400px"/></a><br><br>';
+							echo '<a href="title?i='.$id.'"><img src="'.$base_url.$poster_size_w342.$poster.'" style="max-height: 400px"/></a><br><br>';
 						} else {
 							$poster = "NoImg.jpg";
-							echo '<a href="title.php?i='.$id.'"><img src="'.$poster.'" style="max-height: 400px"/></a><br><br>';
+							echo '<a href="title?i='.$id.'"><img src="'.$poster.'" style="max-height: 400px"/></a><br><br>';
 						}
 						
 					echo '</div>';
@@ -197,31 +197,31 @@ if (!empty($search)) {
 								echo '[left arrow] ';
 							} else {
 								$previousPage = $page - 1;
-								echo '<a href="search.php?s='.$s.'&page='.$previousPage.'&result='.$result.'">[left]</a> ';
+								echo '<a href="?s='.$s.'&page='.$previousPage.'&result='.$result.'">[left]</a> ';
 							}
 							
 						if (($page >= ($totalPages))) {
 							//two pages before
 							$fourPageBefore = $page - 4;
-							echo '<a href="search.php?s='.$s.'&page='.$fourPageBefore.'&result='.$result.'">'.$fourPageBefore.'</a> ';
+							echo '<a href="?s='.$s.'&page='.$fourPageBefore.'&result='.$result.'">'.$fourPageBefore.'</a> ';
 						}
 						
 						if (($page >= ($totalPages-1))) {
 							//one pages before
 							$threePageBefore = $page - 3;
-							echo '<a href="search.php?s='.$s.'&page='.$threePageBefore.'&result='.$result.'">'.$threePageBefore.'</a> ';
+							echo '<a href="?s='.$s.'&page='.$threePageBefore.'&result='.$result.'">'.$threePageBefore.'</a> ';
 						}						
 						
 						if ($page > 2) {
 							//two pages before
 							$twoPageBefore = $page - 2;
-							echo '<a href="search.php?s='.$s.'&page='.$twoPageBefore.'&result='.$result.'">'.$twoPageBefore.'</a> ';
+							echo '<a href="?s='.$s.'&page='.$twoPageBefore.'&result='.$result.'">'.$twoPageBefore.'</a> ';
 						}
 						
 						if ($page > 1) {
 							//one pages before
 							$onePageBefore = $page - 1;
-							echo '<a href="search.php?s='.$s.'&page='.$onePageBefore.'&result='.$result.'">'.$onePageBefore.'</a> ';
+							echo '<a href="?s='.$s.'&page='.$onePageBefore.'&result='.$result.'">'.$onePageBefore.'</a> ';
 						}
 						
 						/*$tempLimit = 1;
@@ -234,30 +234,30 @@ if (!empty($search)) {
 						}*/
 						
 					/// current page ///
-						echo '<b><u><a href="search.php?s='.$s.'&page='.$page.'&result='.$result.'">'.$page.'</a></u></b> ';
+						echo '<b><u><a href="?s='.$s.'&page='.$page.'&result='.$result.'">'.$page.'</a></u></b> ';
 						
 						if ($page < ($totalPages) ) {
 							//one page after
 							$onePageAfter = $page + 1;
-							echo '<a href="search.php?s='.$s.'&page='.$onePageAfter.'&result='.$result.'">'.$onePageAfter.'</a> ';
+							echo '<a href="?s='.$s.'&page='.$onePageAfter.'&result='.$result.'">'.$onePageAfter.'</a> ';
 						}
 						
 						if ($page < ($totalPages-1)) {
 							//two pages after
 							$twoPageAfter = $page + 2;
-							echo '<a href="search.php?s='.$s.'&page='.$twoPageAfter.'&result='.$result.'">'.$twoPageAfter.'</a> ';
+							echo '<a href="?s='.$s.'&page='.$twoPageAfter.'&result='.$result.'">'.$twoPageAfter.'</a> ';
 						}
 						
 						if (($page < ($totalPages-2)) and ($page < 3)) {
 							//three pages after
 							$threePageAfter = $page + 3;
-							echo '<a href="search.php?s='.$s.'&page='.$threePageAfter.'&result='.$result.'">'.$threePageAfter.'</a> ';
+							echo '<a href="?s='.$s.'&page='.$threePageAfter.'&result='.$result.'">'.$threePageAfter.'</a> ';
 						}
 						
 						if (($page < ($totalPages-3)) and ($page < 2)) {
 							//three pages after
 							$fourPageAfter = $page + 4;
-							echo '<a href="search.php?s='.$s.'&page='.$fourPageAfter.'&result='.$result.'">'.$fourPageAfter.'</a> ';
+							echo '<a href="?s='.$s.'&page='.$fourPageAfter.'&result='.$result.'">'.$fourPageAfter.'</a> ';
 						}					
 						
 						
@@ -286,7 +286,7 @@ if (!empty($search)) {
 						// Next Page
 							if ($page < $totalPages) {
 								$nextPage = $page +1;
-								echo '<a href="search.php?s='.$s.'&page='.$nextPage.'&result='.$result.'">[right]</a>';
+								echo '<a href="?s='.$s.'&page='.$nextPage.'&result='.$result.'">[right]</a>';
 							} else {
 								echo '[right arrow]';
 							}

@@ -21,7 +21,8 @@
           <h2><?php the_title(); ?></h2>
           <?php the_content(); ?>
 
-          <a href="wp-content/themes/MyCustomSite/search.php">search</a>
+          <a href="search">search</a><br>
+          <a href="test">test</a>
         </div>
 
       </div>
