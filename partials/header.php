@@ -24,8 +24,9 @@
         <a class="nav-link" href="now-playing">Now Playing</a>
       </li>
     </ul>
-    <form class="form-inline">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+    <form class="form-inline" method="get" action="../?s=">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" name="s" value="">
+      <span class="error"><?php echo $searchErr;?></span>
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
   </div>
