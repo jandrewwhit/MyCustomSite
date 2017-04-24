@@ -21,8 +21,7 @@
           <h2><?php the_title(); ?></h2>
           <?php the_content(); ?>
 
-          <a href="search">search</a><br>
-          <a href="test">test</a>
+          <a href="search">search</a><br>          
         </div>
 
       </div>
