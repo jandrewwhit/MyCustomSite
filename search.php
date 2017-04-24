@@ -194,35 +194,37 @@ if (!empty($search)) {
 							// Previous Page
 							if ($page == 1) {
 								//$previousPage = 0;
-								echo '[left arrow] ';
+								//echo '[left arrow] ';
 							} else {
 								$previousPage = $page - 1;
 								echo '<a href="?s='.$s.'&page='.$previousPage.'&result='.$result.'">[left]</a> ';
+
+								if (($page >= ($totalPages))) {
+									//two pages before
+									$fourPageBefore = $page - 4;
+									echo '<a href="?s='.$s.'&page='.$fourPageBefore.'&result='.$result.'">'.$fourPageBefore.'</a> ';
+								}
+								
+								if (($page >= ($totalPages-1))) {
+									//one pages before
+									$threePageBefore = $page - 3;
+									echo '<a href="?s='.$s.'&page='.$threePageBefore.'&result='.$result.'">'.$threePageBefore.'</a> ';
+								}						
+								
+								if ($page > 2) {
+									//two pages before
+									$twoPageBefore = $page - 2;
+									echo '<a href="?s='.$s.'&page='.$twoPageBefore.'&result='.$result.'">'.$twoPageBefore.'</a> ';
+								}
+								
+								if ($page > 1) {
+									//one pages before
+									$onePageBefore = $page - 1;
+									echo '<a href="?s='.$s.'&page='.$onePageBefore.'&result='.$result.'">'.$onePageBefore.'</a> ';
+								}
 							}
 							
-						if (($page >= ($totalPages))) {
-							//two pages before
-							$fourPageBefore = $page - 4;
-							echo '<a href="?s='.$s.'&page='.$fourPageBefore.'&result='.$result.'">'.$fourPageBefore.'</a> ';
-						}
 						
-						if (($page >= ($totalPages-1))) {
-							//one pages before
-							$threePageBefore = $page - 3;
-							echo '<a href="?s='.$s.'&page='.$threePageBefore.'&result='.$result.'">'.$threePageBefore.'</a> ';
-						}						
-						
-						if ($page > 2) {
-							//two pages before
-							$twoPageBefore = $page - 2;
-							echo '<a href="?s='.$s.'&page='.$twoPageBefore.'&result='.$result.'">'.$twoPageBefore.'</a> ';
-						}
-						
-						if ($page > 1) {
-							//one pages before
-							$onePageBefore = $page - 1;
-							echo '<a href="?s='.$s.'&page='.$onePageBefore.'&result='.$result.'">'.$onePageBefore.'</a> ';
-						}
 						
 						/*$tempLimit = 1;
 						for ($i=2;$i>$tempLimit;$i--) {
@@ -288,7 +290,7 @@ if (!empty($search)) {
 								$nextPage = $page +1;
 								echo '<a href="?s='.$s.'&page='.$nextPage.'&result='.$result.'">[right]</a>';
 							} else {
-								echo '[right arrow]';
+								//echo '[right arrow]';
 							}
 							
 						echo '</h4></center>';
